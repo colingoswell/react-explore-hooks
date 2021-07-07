@@ -1,5 +1,6 @@
 import ProductView from "./components/ProductView";
-
+import ProductListItem from './components/ProductList';
+import ProductDetails from './components/ProductDetails';
 // Eventually this should be data loaded from a service, for now just fake it
 import products from "./mockdata/products.json";
 /** Note to developers
@@ -11,7 +12,9 @@ import products from "./mockdata/products.json";
 function App() {
   return (
     <div className="App">
-      <ProductView products={products} />
+      <ProductView products={products}
+        item={item}/>
+      <ProductDetails item={item} />
     </div>
   );
 }

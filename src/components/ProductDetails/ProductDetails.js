@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProductDetails({product, visible}) {
+function ProductDetails({product, visible, item}) {
     if (!visible) return null
 
     if (!product) return (
@@ -8,6 +8,7 @@ function ProductDetails({product, visible}) {
             <p className="product-info">Our Products</p>
             <p>Welcome to our product catalog. Please enjoy exploring.</p>
             <p>Please select a product to view its details.</p>
+            <p>{ item}</p>
         </div>
     )
 
@@ -17,6 +18,7 @@ function ProductDetails({product, visible}) {
             <p>{product.description}</p>
             <p className="product-price">{product.price}</p>
             <p>Details</p>
+
             <ul>
                 {product.details.map((item, index) => <li className="product-details-list-item" key={index}>
                     {item.label}<br />
